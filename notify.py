@@ -21,7 +21,7 @@ def on_message(ws, message):
                 print(f"Alert: {symbol.upper()} price is below {threshold:.2f} USD!")
                 os.system('aplay /usr/share/sounds/freedesktop/index.theme')
 
-# Define a function to connect to the WebSocket endpoint
+# connect to ws endpoint
 def on_open(ws):
     ws.send(json.dumps({"method": "SUBSCRIBE", "params": [f"{symbol}@trade"], "id": 1}))
 
