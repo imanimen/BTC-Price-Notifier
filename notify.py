@@ -11,7 +11,7 @@ threshold = 24687.72
 socket = "wss://stream.binance.com:9443/ws"
 
 # Define a function to handle incoming WebSocket messages
-def on_message(ws, message):
+def on_message( ws, message ):
     data = json.loads(message)
     if 'e' in data and data['e'] == 'trade':
         symbol_data = data['s'].lower()
